@@ -1,0 +1,82 @@
+{% extends 'app/base.html' %}
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles2.css">
+
+</head>
+<body style="background-color:rgba(111, 143, 160, 0.886)">
+<div class="topnav" id="myTopnav">
+  <a href="homePage.html" class="active">Home</a>
+  <a href="Revenue.html">Revenue Report</a>
+  <a style="float:right">Log-Out</a>
+  <div class="dropdown">
+    <button class="dropbtn">Vehicles 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="infoPage.html">Car Report</a>
+      <a href="2Wheelers.html">Two-Wheeler Report</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Add Departure
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="departure.html">Car </a>
+      <a href="dep2W.html">Two-Wheeler</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Add Arrival
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="NewData.html">Car </a>
+      <a href="arr2W.html">Two-Wheeler</a>
+    </div>
+  </div> 
+  <a href="aboutUs.html" style="float:right">About</a>
+  <a href="#about" style="float:right">Contact Us</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+ -->
+
+{% block body %}
+
+<div class="grid-container">
+    <div class="item1">Total Number Of Parkings:</div>
+    <div class="ans1">{{parking.totalParkings}}</div>
+    <div class="itme2">Parkings Available:</div>
+    <div class="ans2">{{parking.parkingsAvailable}}</div>
+    <div class="itme3">Parkings Occupied:</div>
+    <div class="ans3">{{parking.parkingsOccupied}}</div>
+    <div class="item4">Parkings Vacant:</div>
+    <div class="ans4">{{parking.parkingsVacant}}</div>
+    <div class="item4">Car details with entry time:</div>
+    <div class="ans5">database </div>
+
+    {% for entry in data %}
+    {{entry.number}}
+    {% endfor %}
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+{% endblock body %}
+
+<!-- 
+</body>
+</html>
+-->

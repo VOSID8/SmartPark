@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/styles3.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/styles2.css' %}">
+    {% comment %} <!--<link rel="stylesheet" href="{% static 'app/css/styles1.css' %}">--> {% endcomment %}
+    <title>SmartPark</title>
+  
+</head>
+<body>
+
+<body style="background-color:rgba(111, 143, 160, 0.886)">
+    <div class="bg-image">
+          <div class="topnav" id="myTopnav">
+          <a href="{% url 'homepage' %}" class="active">Home</a>
+          <a href="{% url 'revenuepage' %}">Revenue Report</a>
+          <a href="{% url 'logout' %}"  style="float:right">Log-Out</a>
+          <div class="dropdown">
+            <button class="dropbtn">Vehicles 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'vehicle_info' 'car' %}">Car Report</a>
+              <a href="{% url 'vehicle_info' 'two-wheeler' %}">Two-Wheeler Report</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Add Departure
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'add_data' 'departure' 'car' %}">Car </a>
+              <a href="{% url 'add_data' 'departure' 'two-wheeler' %}">Two-Wheeler</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Add Arrival
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'add_data' 'arrival' 'car' %}">Car </a>
+              <a href="{% url 'add_data' 'arrival' 'two-wheeler' %}">Two-Wheeler</a>
+            </div>
+          </div> 
+          <a href="{% url 'aboutpage' %}" style="float:right">About</a>
+          <a href="{% url 'contactpage' %}" style="float:right">Contact Us</a>
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </div> 
+
+{% block body %}
+{% endblock body %}
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'app/base.html' %}
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>SmartPark</title>
+</head>
+<body>
+    <body style="background-color:rgba(111, 143, 160, 0.886)">
+        <div class="topnav" id="myTopnav">
+          <a href="homePage.html" class="active">Home</a>
+          <a href="Revenue.html">Revenue Report</a>
+          <a  style="float:right">Log-Out</a>
+          <div class="dropdown">
+            <button class="dropbtn">Vehicles 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="infoPage.html">Car Report</a>
+              <a href="2Wheelers.html">Two-Wheeler Report</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Add Departure
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="departure.html">Car </a>
+              <a href="dep2W.html">Two-Wheeler</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Add Arrival
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="NewData.html">Car </a>
+              <a href="arr2W.html">Two-Wheeler</a>
+            </div>
+          </div> 
+          <a href="aboutUs.html" style="float:right">About</a>
+          <a href="#about" style="float:right">Contact Us</a>
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div> -->
+
+{% block body %}
+  <form method="POST" action="{% url 'add_data' 'departure' 'car' %}">
+    {% csrf_token %}
+    <div class="grid-container">
+        <div class="item1">Enter the Car's number</div>
+        <div class="ans1">Enter Departure time</div>
+        <div class="ans2"><input type="text" name="number" id="fname"></div>
+        <div class="itme3"><input type="datetime-local" name="exitTime" id="fname"></div> 
+    
+      </div>
+  
+    <input type="submit" value="Submit" class="submit">
+    </form>
+{% endblock body %}
+<!-- </body>
+</html> -->

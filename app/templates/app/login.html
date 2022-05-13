@@ -1,0 +1,48 @@
+<html>
+{% load static %}
+<head>
+    <title>
+        SmartPark
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/login.css' %}">
+
+</head>
+
+
+<body>
+    <style>
+        body {
+            background-image: url('blue.jpg');
+            
+        }
+        .loginbox{
+            opacity: 0.88;
+        }
+        .submit:hover{
+            background-color: aqua;
+        }
+    </style>
+
+    <div class="loginbox">
+        <h1>Login here</h1>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <p>
+                Username
+            </p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password"  placeholder="Enter Password">
+            <div type="submit">
+            <input type="submit"  value="Login">
+            </div>
+            <a href="#">Lost your password?</a><br>
+            <a href="#">Don't have an account?</a>
+        </form>
+    </div>
+
+
+</body>
+</head>
+
+</html>
