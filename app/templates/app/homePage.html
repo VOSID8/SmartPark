@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/home.css' %}">
+    <title>SmartPark</title>
+</head>
+<body>
+    <div class="loginbox">
+        <h1>Select Choice</h1>
+        <div class="one"><a href="{% url 'vehicle_info' 'car' %}">General Information</a></div><br>
+        <div class="one"><a href="{% url 'add_data' 'departure' 'car' %}">Add Departure Time</a></div><br>
+        <div class="one"><a href="{% url 'add_data' 'arrival' 'car' %}">Add Arrival Time</a></div><br>
+        <div class="one"><a href="{% url 'revenuepage' %}">See Revenue Report</a></div><br>
+        <div class="one"><a href="{% url 'live_camera' 'arrival' 'car' %}">View Live Camera</a></div><br>
+        <div class="one"><a href="{% url 'contactpage' %}">Contact Us</a></div><br>
+    </div>
+</body>
+</html>

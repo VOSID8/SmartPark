@@ -10,4 +10,6 @@ urlpatterns = [
     path('login/', views.loginView, name = 'login'),
     path('logout/', views.logoutView, name = 'logout'),
     path('about/', views.about, name = 'aboutpage'),
+    path('video-stream/<slug:event>/<slug:type>/', views.videoStream, name='video_camera'),
+    path('live-cam/<slug:event>/<slug:type>/', views.liveCam, name = 'live_camera')
 ]

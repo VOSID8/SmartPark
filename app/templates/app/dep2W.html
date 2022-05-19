@@ -49,6 +49,13 @@
         </div> -->
 
 {% block body %}
+
+{% if messages %}
+{% for message in messages %}
+<p style="text-align:center; color:#280409; font-size:21px;">{{message}}</p>
+{% endfor %}
+{% endif %}
+
   <form method="POST" action="{% url 'add_data' 'departure' 'two-wheeler' %}">
     {% csrf_token %}
     <div class="grid-container">

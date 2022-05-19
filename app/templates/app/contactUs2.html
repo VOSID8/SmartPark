@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Contact US-SmartPark
+    </title>
+    <link rel="stylesheet" href="{% static 'app/css/contactUs.css' %}">
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/1860717/pexels-photo-1860717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        }
+    </style>
+
+
+
+
+    <div class="container">
+        <h1>Connect With Us</h1><br>
+        <p>
+            We would love to respond to your queries <br>Feel free to get in touch with us
+        </p><br>
+        <div class="contact-box">
+            <div class="contact-left">
+                <h3>Send your request</h3>
+                {% if messages %}
+                {% for message in messages %}
+                <p style="text-align:center; color:#2f5f78; font-size:21px; margin-bottom:20px;">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                <form action="{% url 'contactpage' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>
+                                Name
+                            </label>
+                            <input type="text" name='name' placeholder="">
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                Phone Number
+                            </label>
+                            <input type="text" name='phone' placeholder="">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>
+                                Email
+                            </label>
+                            <input type="email" name='email' placeholder="">
+                        </div>
+                        <!-- <div class="input-group">
+                            <label>
+                                Subject
+                            </label>
+                            <input type="text" placeholder="">
+                        </div> -->
+                    </div>
+                    <label> Message</label>
+                    <textarea rows="5" placeholder="Your Message" name='message'>
+
+                    </textarea>
+                    <button type="submit">Send</button>
+                </form>
+
+            </div>
+            <div class="contact-right">
+                <h3>
+                    Reach Us
+                </h3>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td>SmartPark@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>+1 012 345 6789</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>Bhadson Rd, Adarsh Nagar, Prem Nagar, Patiala, Punjab 147004</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

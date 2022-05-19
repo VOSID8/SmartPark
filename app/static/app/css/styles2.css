@@ -118,6 +118,40 @@ body {margin:0}
     
     
   }
+  .table-container{
+    display: grid;
+    grid-template-columns: 960px;
+    width: 75%;
+    left: 12.5%;
+    position: relative;
+    row-gap: 2px;
+    column-gap: 3px;
+    background-color: #333;
+    padding: 10px;
+    margin-top: 8%;
+    
+  }
+  .table, th, td {
+    border:1px solid rgb(162, 175, 199);
+    background-color: #b5bdbf;
+  }
+  .pagination {
+    display: inline-block;
+    background-color: #b5bdbf;
+    text-align: center;
+  }
+  
+  .pagination a {
+    color: black;
+    float: center;
+    padding: 10px ;
+    text-decoration: none;
+  }
+  .hero{
+    background-color: #b5bdbf;
+    font-size: larger;
+
+  }
   
   .grid-container > div {
     /* background-color: rgba(255, 255, 255, 0.8); */

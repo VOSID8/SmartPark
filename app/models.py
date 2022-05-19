@@ -15,7 +15,8 @@ class Vehicle(models.Model):
         return str(self.number)
 
 class Parking(models.Model):
-    user = models.OneToOneField(User, on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    type = models.CharField(max_length=15)
     totalParkings = models.PositiveBigIntegerField()
     parkingsAvailable = models.PositiveBigIntegerField()
     parkingsOccupied = models.PositiveBigIntegerField()

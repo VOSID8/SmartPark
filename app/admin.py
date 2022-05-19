@@ -11,7 +11,7 @@ class VehicleAdmin(admin.ModelAdmin):
 
 @admin.register(models.Parking)
 class ParkingAdmin(admin.ModelAdmin):
-    list_display = ['user', 'totalParkings', 'parkingsAvailable', 'parkingsOccupied', 'parkingsVacant']
+    list_display = ['user', 'type', 'totalParkings', 'parkingsAvailable', 'parkingsOccupied', 'parkingsVacant']
     ordering = ['user', 'totalParkings', 'parkingsAvailable']
 
 @admin.register(models.Revenue)

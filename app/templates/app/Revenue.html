@@ -1,6 +1,6 @@
 {% extends 'app/base.html' %}
-<!--
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,23 +44,62 @@
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div> -->
 
+<!-- <h4>revenue generated today, yesterterday,past week , with graphs etc. will be displayed </h4> -->
+
 {% block body %}
 
-<h4>revenue generated today, yesterterday,past week , with graphs etc. will be displayed </h4>
+<div class="grid-container">
+ <!-- <div class="item4">Ideal revenue to be genrated:</div>
+  <div class="ans4">25000</div>  -->
+  <div class="item1">Total revenue generated till now:</div>
+  <div class="ans1">{{total_revenue}}</div>
+  <div class="itme2">Revenue generated today:</div>
+  <div class="ans2">{{today_revenue}}</div>
+  <!--  <div class="item4">Revenue generated yesterday:</div>
+  <div class="ans5">21000 </div> 
+   <div class="itme3">Weekly graph of generated revenue:</div>
+  <div class="ans3">graph</div>  -->
+  </div>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
+  <div class="table-container">
+    <table style="width:100%">
+    <caption class="hero" >Revenue Details</caption>
+    <tr>
+      <td>S.no</td>
+      <td>Date</td>
+      <td>Revenue Generated</td>
+    </tr>
+    {% for entry in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{entry.date}}</td>
+      <td>{{entry.amount}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    <div class="pagination">
+      {% if prev %}
+      <a href="{% url 'revenuepage' %}?page={{prev}}">&laquo;</a>
+      {% else %}
+      <a active>&laquo;</a>
+      {% endif %}
+      {% for page in pages %}
+      {% if page == curr %}
+      <a active >{{page}}</a>
+      {% else %}
+      <a href="{% url 'revenuepage' %}?page={{page}}">{{page}}</a>
+      {% endif %}
+      {% endfor %}
+      {% if next %}
+      <a href="{% url 'revenuepage' %}?page={{next}}">&raquo;</a>
+      {% else %}
+      <a active>&raquo;</a>
+      {% endif %}
+    </div>
+  
 
+</div>
 {% endblock body %}
-<!--
+<!-- 
 </body>
-</html>
--->
+</html> -->

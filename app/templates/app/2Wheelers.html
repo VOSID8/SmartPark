@@ -1,7 +1,6 @@
 {% extends 'app/base.html' %}
 
-<!-- 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,12 +41,11 @@
   </div> 
   <a href="aboutUs.html" style="float:right">About</a>
   <a href="#about" style="float:right">Contact Us</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
- -->
+
+</div> -->
 
 
- {% block body %}
+{% block body %}
 
 <div class="grid-container">
     <div class="item1">Total Number Of Parkings:</div>
@@ -58,25 +56,49 @@
     <div class="ans3">{{parking.parkingsOccupied}}</div>
     <div class="item4">Parkings Vacant:</div>
     <div class="ans4">{{parking.parkingsVacant}}</div>
-    <div class="item4">Two-Wheeler details with entry time:</div>
-    <div class="ans5">database </div>
-
-    {% for entry in data %}
-    {{entry.number}}
-    {% endfor %}
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
+</div>
+<div class="table-container">
+  <table style="width:100%">
+  <caption class="hero" >Two-Wheeler Details</caption>
+  <tr>
+    <td>S.no</td>
+    <td>Car number</td>
+    <td>Entry time</td>
+    <td>Exit time</td>
+    <td>Parking duration</td>
+  </tr>
+  {% for vehicle in data %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{vehicle.number}}</td>
+        <td>{{vehicle.entryTime}}</td>
+        <td>{{vehicle.exitTime}}</td>
+        <td>{{vehicle.parkingDuration}}</td>
+      </tr>
+      {% endfor %}
+</table> 
+<div class="pagination">
+  {% if prev %}
+  <a href="{% url 'vehicle_info' 'two-wheeler' %}?page={{prev}}">&laquo;</a>
+  {% else %}
+  <a active>&laquo;</a>
+  {% endif %}
+  {% for page in pages %}
+  {% if page == curr %}
+  <a active >{{page}}</a>
+  {% else %}
+  <a href="{% url 'vehicle_info' 'two-wheeler' %}?page={{page}}">{{page}}</a>
+  {% endif %}
+  {% endfor %}
+  {% if next %}
+  <a href="{% url 'vehicle_info' 'two-wheeler' %}?page={{next}}">&raquo;</a>
+  {% else %}
+  <a active>&raquo;</a>
+  {% endif %}
+</div>
+</div>
 
 {% endblock body %}
-<!-- 
-</body>
+
+<!-- </body>
 </html> -->

@@ -25,7 +25,12 @@
 
     <div class="loginbox">
         <h1>Login here</h1>
-        <form action="{% url 'login' %}" method="POST">
+        {% if messages %}
+        {% for message in messages %}
+        <p style="text-align:center; color:#ff0000;">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        <form action="{% url 'login' %}?next={{next}}" method="POST">
             {% csrf_token %}
             <p>
                 Username

@@ -18,7 +18,7 @@
 <body style="background-color:rgba(111, 143, 160, 0.886)">
     <div class="bg-image">
           <div class="topnav" id="myTopnav">
-          <a href="{% url 'homepage' %}" class="active">Home</a>
+          <a href="{% url 'homepage' %}">Home</a>
           <a href="{% url 'revenuepage' %}">Revenue Report</a>
           <a href="{% url 'logout' %}"  style="float:right">Log-Out</a>
           <div class="dropdown">
@@ -46,6 +46,17 @@
             <div class="dropdown-content">
               <a href="{% url 'add_data' 'arrival' 'car' %}">Car </a>
               <a href="{% url 'add_data' 'arrival' 'two-wheeler' %}">Two-Wheeler</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Live Camera
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'live_camera' 'arrival' 'car' %}">Arrival - Car </a>
+              <a href="{% url 'live_camera' 'arrival' 'two-wheeler' %}">Arrival - Two-Wheeler</a>
+              <a href="{% url 'live_camera' 'departure' 'car' %}">Departure - Car </a>
+              <a href="{% url 'live_camera' 'departure' 'two-wheeler' %}">Departure - Two-Wheeler</a>
             </div>
           </div> 
           <a href="{% url 'aboutpage' %}" style="float:right">About</a>
