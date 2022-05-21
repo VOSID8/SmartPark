@@ -38,6 +38,7 @@ def logoutView(request):
     logout(request)
     return redirect("/login")
 
+#add entry and exit time minually
 @login_required
 def addData(request, event, type):
     parking = Parking.objects.get(user = request.user, type = type)
@@ -53,9 +54,9 @@ def addData(request, event, type):
             entry = Vehicle(number = number, entryTime = entryTime, user = request.user, type = type)
             parking.parkingsOccupied += 1
             parking.parkingsVacant -= 1
-            rev = Revenue.objects.filter(user=request.user, date=date.today()).first()
+            rev = Revenue.objects.filter(user=request.user, date=entryTime.date()).first()
             if rev is None:
-                rev = Revenue(user=request.user, date=date.today(), amount=30)
+                rev = Revenue(user=request.user, date=entryTime.date(), amount=30)
             else:
                 rev.amount += 30
             rev.save()
