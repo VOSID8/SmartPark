@@ -2,11 +2,13 @@
 
 Deployed on Heroku at https://smartpark-infinity.herokuapp.com/
 
+Daily parking slots like Malls, private parkings etc as well as parking for events simply use ticket mechanism for cars getting parked. However, this method involves a lot of manforce which can be cut down upon as well as lacks security and efficient parking mechanism. We would be detecting number plates, storing them in our database on the arrival of the vehicle and its type and maintaining a record daily. On depart, document its departing time. Estimating how long the car is being parked and ensuring no vehicle is being parked for unusual hours. 
+
 ## Tech Stack
 
 **Client:** HTML, CSS
 
-**Server:** Python, Django
+**Server:** Python, Django, OpenCV, PyTorch
 
 **Database:** SQLite
 
