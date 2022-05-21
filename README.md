@@ -46,10 +46,10 @@ Add Security Key : Go to project's **settings.py** file and change the value of 
 
 Run Migrations
 
-```
+```bash
  python manage.py makemigrations
 ```
-```
+```bash
  python manage.py migrate
 ```
 
